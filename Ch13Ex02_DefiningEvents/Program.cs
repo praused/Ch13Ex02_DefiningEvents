@@ -10,6 +10,11 @@ namespace Ch13Ex02_DefiningEvents
     {
         static void Main(string[] args)
         {
+            Connection myConnection = new Connection();
+            Display myDisplay = new Display();
+            myConnection.MessageArrived += new MessageHandler(myDisplay.DisplayMessage);
+            myConnection.Connect();
+            Console.ReadKey();
         }
     }
 }
